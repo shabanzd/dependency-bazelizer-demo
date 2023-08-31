@@ -1,0 +1,5 @@
+{
+    "integrity": "sha256-AKG+LPL2LpiCPP43NRgcrmG9yXkHTv9moM80EV42RXQ=",
+    "strip_prefix": "dependency-bazelizer-0.1.0",
+    "url": "https://github.com/shabanzd/dependency-bazelizer/archive/refs/tags/v0.1.0.tar.gz"
+}
