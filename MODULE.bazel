@@ -12,16 +12,16 @@ pip = use_extension("@rules_python//python/extensions:pip.bzl", "pip")
 
 python.toolchain(
     is_default = True,
-    python_version = "3.10",
+    python_version = "3.8",
 )
 
-use_repo(python, "python_versions", "python_3_10")
+use_repo(python, "python_versions", "python_3_8")
 
-register_toolchains("@python_3_10//:all")
+register_toolchains("@python_3_8//:all")
 
 pip.parse(
     hub_name = "demo_deps",
-    python_version = "3.10",
+    python_version = "3.8",
     requirements_lock = "//:requirements.txt",
 )
 
@@ -33,7 +33,7 @@ local_path_override(
     path = "./transitive_dep_module/",
 )
 
-bazel_dep(name = "dependency_bazelizer", version = "0.2.0")
+bazel_dep(name = "dependency_bazelizer", version = "0.1.0")
 dependency_bazelizer = use_extension("@dependency_bazelizer//:input.bzl", "dependency_bazelizer")
 dependency_bazelizer.config(deb_packages_input_file = "//:deb_packages.in", storage_config_file = "//:storage_config.json")
 use_repo(dependency_bazelizer, "dep_bazelizer_config")
