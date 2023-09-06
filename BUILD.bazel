@@ -1,2 +1,9 @@
 load("@dependency_bazelizer//:run_bazelizer.bzl", "run_bazelizer")
+load("@rules_python//python:pip.bzl", "compile_pip_requirements")
+
 run_bazelizer(repository = "@dep_bazelizer_config")
+
+compile_pip_requirements(
+    name = "requirements",
+    extra_args = ["--resolver=backtracking"],
+)

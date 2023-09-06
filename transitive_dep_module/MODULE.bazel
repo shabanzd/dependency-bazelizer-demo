@@ -4,7 +4,7 @@ module(
     compatibility_level = 1,
 )
 
-bazel_dep(name = "dependency_bazelizer", version = "0.1.0")
+bazel_dep(name = "dependency_bazelizer", version = "0.2.0")
 bazelizer = use_extension("@dependency_bazelizer//:input.bzl", "bazelizer")
 bazelizer.config(deb_packages_input_file = "//:deb_packages.in", storage_config_file = "//:storage_config.json")
 use_repo(bazelizer, "hello")
