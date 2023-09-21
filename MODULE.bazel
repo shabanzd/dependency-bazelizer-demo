@@ -33,7 +33,7 @@ local_path_override(
     path = "./transitive_dep_module/",
 )
 
-bazel_dep(name = "dependency_bazelizer", version = "0.2.0")
+bazel_dep(name = "dependency_bazelizer", version = "0.3.0")
 dependency_bazelizer = use_extension("@dependency_bazelizer//:input.bzl", "dependency_bazelizer")
 dependency_bazelizer.config(
     deb_packages_input_file = "//:deb_packages.in", 
@@ -42,4 +42,4 @@ dependency_bazelizer.config(
 )
 use_repo(dependency_bazelizer, "dep_bazelizer_config")
 
-#bazel_dep(name="iproute2_amd64", version="5.15.0-1ubuntu2")
+bazel_dep(name="iproute2_amd64", version="5.15.0-1ubuntu2")
